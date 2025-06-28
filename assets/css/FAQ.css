@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 32px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.faq-list {
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    margin-bottom: 8px;
+}
+
+.faq-question {
+    background: #2D2D2D;
+    padding: 24px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background: #414141;
+}
+
+.faq-question .icon {
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.faq-question .icon::before,
+.faq-question .icon::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    transition: transform 0.3s;
+}
+
+.faq-question .icon::before {
+    width: 2px;
+    height: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.faq-question .icon::after {
+    width: 30px;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.faq-item.active .icon::before {
+    transform: translateX(-50%) rotate(90deg);
+}
+
+.faq-answer {
+    background: #2D2D2D;
+    margin-top: 1px;
+    padding: 24px;
+    font-size: 20px;
+    line-height: 1.6;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.signup-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.signup-text {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.signup-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.email-input {
+    flex: 1;
+    padding: 20px;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #666;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.start-button {
+    padding: 20px 40px;
+    background: #E50914;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.start-button:hover {
+    background: #F40612;
+}
+
+@media (max-width: 768px) {
+    .faq-question {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .faq-answer {
+        font-size: 16px;
+        padding: 20px;
+    }
+
+    .signup-form {
+        flex-direction: column;
+    }
+
+    .start-button {
+        width: 100%;
+        justify-content: center;
+    }
+}

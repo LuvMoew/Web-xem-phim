@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+.container {
+    max-width: 1500px;
+    margin-left: 200px;
+    padding: 20px;
+}
+
+h2 {
+
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Trending Section */
+.trending-section {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.trending-slider {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    gap: 8px;
+    padding: 20px 0;
+}
+
+.movie-card {
+    position: relative;
+    flex: 0 0 260px;
+    height: 300px;
+    border-radius: 4px;
+    padding: 20px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.movie-number {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    font-size: 120px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 100px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Features Section */
+.features-section {
+    max-width: 1300px;
+    margin: 0 auto;  /* Centers the section horizontally */
+    padding: 20px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Responsive grid */
+    gap: 20px;  /* This controls the spacing between the cards */
+    margin-top: 40px;
+    padding: 0 10px;  /* Optional: adds space on the sides for smaller screens */
+}
+
+
+.feature-card {
+    margin: 10px; /* Add margin around each card if needed */
+    background: #14142B;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.feature-card img {
+    width: 64px;
+    height: 64px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #B3B3B3;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .movie-card {
+        flex: 0 0 200px;
+        height: 300px;
+    }
+
+    .movie-number {
+        font-size: 80px;
+    }
+
+    .slider-button {
+        width: 40px;
+        height: 80px;
+    }
+}
+
+/* popoiup */
+/* Ẩn popup mặc định */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    background-color: #141414;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.movie-header {
+    position: relative;
+    height: 350px;
+}
+
+.movie-backdrop {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.movie-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.movie-info {
+    padding: 20px;
+}
+
+.movie-meta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.movie-meta span {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.movie-description {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.cta-button svg {
+    margin-left: 8px;
+}
+
+/* Nút thêm phim */
+.add-movie-btn {
+    background: #E50914;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.add-movie-btn:hover {
+    background: #b2070f;
+}

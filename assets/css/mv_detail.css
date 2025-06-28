@@ -1,0 +1,755 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* hero */
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    margin-top: 60px;
+}
+
+.hero-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.3);
+}
+
+.hero-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, rgba(15, 15, 15, 0.8) 10%, transparent 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: flex-end;
+}
+
+.movie-poster {
+    width: 220px;
+    height: 330px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.84);
+    margin-bottom: 40px;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-info {
+    margin-left: 30px;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.movie-info h1 {
+    font-size: 42px;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.movie-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.movie-meta span {
+    margin-right: 15px;
+}
+
+.meta-divider {
+    margin: 0 5px;
+}
+
+.movie-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rating-score {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffd700;
+    margin-right: 10px;
+}
+
+.rating-stars {
+    color: #ffd700;
+    margin-right: 10px;
+}
+
+.votes-count {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.movie-description {
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.movie-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-bookmark {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.btn-bookmark:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-admin {
+    background-color: rgba(217, 83, 79, 0.8);
+    color: white;
+}
+
+.btn-admin:hover {
+    background-color: rgba(217, 83, 79, 1);
+}
+
+.section {
+    margin-bottom: 40px;
+    text-align: justify;
+
+    background-color: rgba(49, 49, 49, 0.82);
+    border-radius: 0 0 10px 10px;
+    padding: 15px;
+}
+
+.section-main {
+    background-color: rgba(26, 25, 25, 0.91);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.container-main {
+    margin-top: 15px;
+    background-color: rgba(26, 25, 25, 0.91);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #e50914;
+}
+
+
+/* ----cmt---- */
+
+.comments-section {
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    border: none;
+    margin-bottom: 10px;
+    min-height: 100px;
+}
+
+.comment-form button {
+    background-color: #1e9e6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-item {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.comment-header {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.rating {
+    display: inline-block;
+    color: #ffd700;
+    margin-right: 5px;
+}
+
+
+/* Add this to your CSS */
+
+.comment-admin-actions {
+    margin-left: auto;
+}
+
+.btn-delete-comment {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.btn-delete-comment:hover {
+    background-color: rgba(255, 77, 77, 0.2);
+}
+
+.comment-user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+
+/* -------form sửa--------------- */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #1f1f1f;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    max-width: 95%;
+}
+
+.form-control {
+    min-height: 50px;
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 6px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #444;
+    transition: border-color 0.3s ease;
+}
+
+
+/* -----star rateting------------- */
+
+.rating-container {
+    margin-bottom: 20px;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+    transition: color 0.2s;
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label,
+.star-rating input:checked~label {
+    color: #ffd700;
+}
+
+.comment-rating {
+    color: #ffd700;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    /* Chuyển nút sang góc phải */
+    width: 40px;
+    height: 40px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    /* Ẩn mặc định */
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#backToTop:hover {
+    background-color: #cc5500;
+    transform: scale(1.1);
+}
+
+.edit-comment,
+.delete-comment {
+    border: none;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    transition: all 0.2s ease;
+}
+
+.edit-comment {
+    background-color: #3498db;
+    color: white;
+}
+
+.edit-comment:hover {
+    background-color: #2980b9;
+}
+
+.delete-comment {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.delete-comment:hover {
+    background-color: #c0392b;
+}
+
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+    .comment-header {
+        flex-wrap: wrap;
+    }
+    .comment-id {
+        margin-left: 0;
+        margin-right: auto;
+        margin-top: 5px;
+    }
+}
+
+
+/* Episodes container styling */
+
+.episodes-container {
+    color: #ffffff;
+    padding: 100px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+
+/* Admin table styling */
+
+.episodes-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.episodes-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+    background-color: #1f1f1f;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.episodes-table th,
+.episodes-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+.episodes-table th {
+    background-color: #2c2c2c;
+    font-weight: bold;
+    color: #fff;
+}
+
+.episodes-table tr:hover {
+    background-color: #292929;
+}
+
+.episodes-table tr:last-child td {
+    border-bottom: none;
+}
+
+.episode-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.inline-form {
+    display: inline;
+}
+
+
+/* Button styling */
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-watch {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-watch:hover {
+    background-color: #2980b9;
+}
+
+.btn-edit {
+    background-color: #f39c12;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #d35400;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+
+/* Regular user episode grid */
+
+.episodes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.episode-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+}
+
+.episode-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.episode-button:active {
+    transform: translateY(0);
+}
+
+
+/* Responsive styling */
+
+@media (max-width: 768px) {
+    .episodes-table th,
+    .episodes-table td {
+        padding: 8px 10px;
+    }
+    .episode-actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* Episodes container styling */
+
+.episodes-container {
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+
+/* Admin table styling */
+
+.episodes-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.episodes-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+    background-color: #1f1f1f;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.episodes-table th,
+.episodes-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+.episodes-table th {
+    background-color: #2c2c2c;
+    font-weight: bold;
+    color: #fff;
+}
+
+.episodes-table tr:hover {
+    background-color: #292929;
+}
+
+.episodes-table tr:last-child td {
+    border-bottom: none;
+}
+
+.episode-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.inline-form {
+    display: inline;
+}
+
+
+/* Button styling */
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-watch {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-watch:hover {
+    background-color: #2980b9;
+}
+
+.btn-edit {
+    background-color: #f39c12;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #d35400;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+
+/* Regular user episode grid */
+
+.episode-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+}
+
+.episode-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.episode-button:active {
+    transform: translateY(0);
+}
+
+
+/* Responsive styling */
+
+@media (max-width: 768px) {
+    .episodes-table th,
+    .episodes-table td {
+        padding: 8px 10px;
+    }
+    .episode-actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

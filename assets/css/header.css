@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin-top:30px;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.navbar {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between; /* Căn hai đầu */
+    align-items: center;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+}
+
+/* Nhóm Menu + Language về bên trái */
+.menu-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Tạo khoảng cách giữa Menu và Language */
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    color: #333;
+}
+
+.menu-button .icon {
+    font-size: 18px;
+    padding: 5px;
+    padding-right: 11px;
+    padding-left: 11px;
+    border-radius: 80px;
+    background-color: rgb(70, 132, 156);
+}
+
+.menu-button .text {
+    font-weight: 500;
+    padding: 10px;
+}
+
+/* Language selector */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+ 
+}
+
+.language-select {
+    background-color: rgba(1, 1, 1, 0.654);
+    padding: 3px;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.622);
+    color: white;
+    border-radius: 7px;
+}
+
+/* Mục Home, About, Search nằm giữa */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    margin-left: auto; /* Đẩy nút login về phải */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Nút login về bên phải */
+.auth-buttons {
+    margin-left: auto; /* Đẩy nút login về phải */
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color:rgb(70, 132, 156);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-login {
+    background: rgb(48, 80, 83);
+    color: white;
+}
+
+.btn-login:hover {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+/* Khu vực Parallax */
+.parallax {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    
+}
+
+/* Ảnh nền cố định */
+.parallax-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/webfilm/assets/img/nen2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: black;
+    z-index: -3;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    background-color: rgba(0, 0, 0, 0.3); /* Điều chỉnh độ mờ tại đây */
+    z-index: -1;
+}
+
+/* Lớp trên di chuyển theo cuộn trang */
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    background-image: url("/webfilm/assets/img/layer1.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* Ảnh cố định không cuộn */
+.parallax-fixed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/webfilm/assets/img/lay1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+} 
+
+/* Nút Explore */
+.explore-btn {
+    padding: 12px 30px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    outline: none;
+}
+
+.explore-btn:hover {
+    background: #ffffff;
+    transform: scale(1.1);
+    color: black;
+}
+
+/* Hiệu ứng phóng to & mờ dần khi chuyển trang */
+.scale-up {
+    transform: scale(1.2);
+    opacity: 0;
+}
+
+.hero-content {
+    margin-top: 100px;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 80px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 10px;
+    color: white;
+}
+
+.hero-subtitle {
+    font-size: 40px;
+    letter-spacing: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+}
+.social-links {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-transform: uppercase;
+}
